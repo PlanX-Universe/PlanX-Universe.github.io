@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="SH Planning System - Service-oriented HTN Planning for Real-world Domains">
+  <meta name="description" content="SH is a service-oriented HTN planning system for solving complex planning problems, with support for library and web service integration.">
+  <meta name="keywords" content="SH Planning System, HTN planning, AI planning, service-oriented architecture, HPDL, Scala, planning web services">
+  <meta name="author" content="Ilche Georgievski, Akash V. Palghadmal, Ebaa Alnazer, Marco Aiello">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PlanX-Universe">
+  <meta property="og:title" content="SH Planning System">
+  <meta property="og:description" content="Service-oriented HTN planning system for real-world domains.">
+  <meta property="og:url" content="https://github.com/PlanX-Universe/sh">
+  <meta property="og:image" content="https://opengraph.githubassets.com/1/PlanX-Universe/sh">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SH Planning System repository preview">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SH Planning System">
+  <meta name="twitter:description" content="Service-oriented HTN planning system for real-world domains.">
+  <meta name="twitter:image" content="https://opengraph.githubassets.com/1/PlanX-Universe/sh">
+  <meta name="twitter:image:alt" content="SH Planning System repository preview">
+
+  <!-- Irrelevant paper-specific citation meta tags intentionally commented out for this repository page. -->
+  <!--
+  <meta name="citation_title" content="PAPER_TITLE">
+  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
+  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  -->
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <!-- Adobe document preview preconnect is not required for this repository page. -->
+  <!-- <link rel="preconnect" href="https://documentcloud.adobe.com"> -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <title>SH Planning System | Service-oriented HTN Planning</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/PlanX-Universe.png?size=32">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://github.com/PlanX-Universe.png?size=16">
+  <link rel="shortcut icon" href="https://github.com/PlanX-Universe.png?size=32">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/PlanX-Universe.png?size=180">
+ 
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Adobe PDF viewer script is not needed on this page. -->
+  <!-- <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script> -->
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Software Project -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "SH Planning System",
+    "description": "SH is a software system for solving complex planning problems using state-based HTN planning and a service-oriented architecture.",
+    "codeRepository": "https://github.com/PlanX-Universe/sh",
+    "url": "https://github.com/PlanX-Universe/sh",
+    "image": "https://opengraph.githubassets.com/1/PlanX-Universe/sh",
+    "keywords": ["HTN planning", "service-oriented architecture", "HPDL", "AI planning", "Scala"],
+    "programmingLanguage": "Scala",
+    "license": "https://github.com/PlanX-Universe/sh/blob/main/LICENSE",
+    "isAccessibleForFree": true,
+    "author": {
+      "@type": "Person",
+      "name": "Ilche Georgievski"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PlanX-Universe"
+    },
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://github.com/PlanX-Universe/sh"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Hierarchical Task Network Planning"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Service-oriented AI Systems"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PlanX-Universe",
+    "url": "https://github.com/PlanX-Universe",
+    "logo": "https://github.com/PlanX-Universe.png",
+    "sameAs": [
+      "https://github.com/PlanX-Universe"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- More Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View SH resources">
+      <i class="fas fa-link"></i>
+      Resources
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>SH Resources</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://github.com/PlanX-Universe/sh" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Source Repository</h5>
+            <p>Access SH source code, README, and project updates.</p>
+            <span class="work-venue">GitHub</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://github.com/PlanX-Universe/sh/blob/main/README.md" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>README</h5>
+            <p>Read setup, usage details, and project documentation.</p>
+            <span class="work-venue">GitHub</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://github.com/PlanX-Universe/sh/blob/main/LICENSE" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>MIT License</h5>
+            <p>View the licensing terms for SH and derivative work.</p>
+            <span class="work-venue">GitHub</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+  <section class="hero hero-top">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">SH Planning System</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=RN7G80gAAAAJ&hl=en" target="_blank">Ilche Georgievski</a><sup>1</sup>,</span>
+              <span class="author-block">Akash V. Palghadmal<sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=IdJ8jHsAAAAJ&hl=en" target="_blank">Ebaa Alnazer </a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=XvRUyU4AAAAJ&hl=en" target="_blank">Marco Aiello</a><sup>1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Service Computing Department, Institute of Architecture of Application Systems (IAAS), University of Stuttgart</span><br>
+        
+            </div>
+
+                  <div class="is-size-6 publication-authors">
+                    <span class="author-block">Contact: <a href="mailto:ilche.georgievski@iaas.uni-stuttgart.de">ilche.georgievski@iaas.uni-stuttgart.de</a> | <a href="https://ilche.mk/" target="_blank">Website</a></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <span class="link-block">
+                        <a href="https://github.com/PlanX-Universe/sh" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                      </a>
+                    </span>
+
+                    <span class="link-block">
+                      <a href="https://github.com/PlanX-Universe/sh/blob/main/README.md" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-book"></i>
+                      </span>
+                      <span>README</span>
+                    </a>
+                  </span>
+
+
+                <span class="link-block">
+                  <a href="static/pdfs/sh-planning.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+
+                <span class="link-block">
+                  <a href="https://github.com/PlanX-Universe/sh/blob/main/LICENSE" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-balance-scale"></i>
+                  </span>
+                  <span>MIT License</span>
+                </a>
+              </span>
+
+              <!-- Irrelevant paper-specific links intentionally commented out for this repository page. -->
+              <!--
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="static/pdfs/supplementary_material.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Supplementary</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+                </a>
+              </span>
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Irrelevant template media sections are intentionally commented out for SH. -->
+<!--
+<section class="hero teaser">...</section>
+<section class="hero is-small">...</section>
+<section class="hero is-small is-light">...</section>
+-->
+
+<!-- Overview -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">SH Planning System</h2>
+        <div class="content has-text-justified">
+          <p>
+            SH is a software system designed to solve complex planning problems in various domains. It is based on state-based Hierarchical Task Network (HTN) planning and relies on a version of the Hierarchical Planning Definition Language (HDPL) for specifying planning problems. What sets SH apart is its modular and service-oriented architecture, providing flexibility, extensibility, and maintainability. The SH planning system offers versatile capabilities, including modular parsing of planning problems, quick variable binding and predicate grounding on the fly during plan generation, resource-efficient plan generation, and seamless integration into other larger systems. These capabilities make SH suitable for addressing real-world challenges in planning, automation, assistance, and decision-making.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End overview -->
+
+
+<!-- System Architecture -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content has-text-justified">
+      <h2 class="title is-3 has-text-centered">System Architecture</h2>
+      <div class="has-text-centered">
+        <figure class="image" style="margin: 0 auto 1.5rem auto; max-width: 1000px;">
+          <img src="static/images/system-architecture.png" alt="SH system architecture" loading="lazy" style="width: 100%; height: auto;">
+        </figure>
+      </div>
+      <p>
+        SH's architecture is layered and composed of nine modules. The bottom layer consists of the Repository, Data, and Test Suite modules, enabling reading, storing, and configuring planning data and testing the core planning functionalities. The Core layer comprises Parsing, Problem, Solving, and Plan modules. The Parsing module enables parsing planning problems, while the Problem module handles an HTN planning problem's representation at the programming level. The Solving module encompasses the functionalities for plan generation, space search, and grounding. The Plan module includes the programming construct representing the solution to a planning problem. The top layer features the Planning Services and REST Services modules, offering functionalities for system utilisation and integration. The subsequent section details the key functionalities and capabilities of the modules at the Core and Integration layers.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End system architecture -->
+
+
+<!-- Capabilities -->
+<section class="section hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered">Capabilities</h2>
+        <ul>
+          <li>Supports specifying HTN planning problems using the Hierarchical Planning Definition Language (HPDL).</li>
+          <li>Parses HPDL files into Scala case classes using modular, composable parser combinators that enable pattern matching against parsed results.</li>
+          <li>Supports reasoning over rich expressiveness features in domains, including logical connectives, quantification, numeric constraints, axioms, recursion, dynamic objects, and parameter typing.</li>
+          <li>Generates plans by combining ordered task decomposition, depth-first search, and on-the-fly grounding to efficiently handle diverse domains and scenarios.</li>
+          <li>Performs grounding dynamically during planning using a lifted representation and a predicate-property map, minimizing binding checks while leveraging interned Scala Symbols to ensure consistent variable references across HTN constructs.</li>
+          <li>Offers flexible integration through 8 modular planning services that can be deployed standalone as a .jar, embedded in larger systems, or exposed as asynchronous REST Web services via Akka HTTP.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End capabilities -->
+
+
+<!-- Impact -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content has-text-justified">
+      <h2 class="title is-3 has-text-centered">Impact</h2>
+      <p>
+        SH's design philosophy has advanced methodological aspects of AI planning: contributing a standard-based syntax for specifying HTN planning problems (well before HDDL), incorporating numeric HTN planning, pioneering the idea of AI planning as a service, and laying the groundwork for planning system engineering principles aligned with the emerging AI engineering field. Its expressiveness has enabled domains that surpass the capabilities of state-of-the-art HTN planners.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End impact -->
+
+
+<!-- Applications -->
+<section class="section hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered">Applications</h2>
+        <p>
+          SH has driven innovation across several real-world domains, including smart offices, smart open spaces within buildings, and cloud application deployment. A notable deployment regulated lighting in the Bernoulliborg building's restaurant at the University of Groningen over two years, reducing energy consumption, cutting operational costs, and improving user satisfaction with building automation. SH has been at the core of the Energy Smart Offices and BIGS projects (funded by the Dutch Research Council), the GreenerBuildings project (funded by the European Union's Seventh Framework Program), and a Green Mind Award initiative at the University of Groningen. Ongoing efforts focus on integrating SH into a living lab at the University of Stuttgart.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End applications -->
+
+
+<!-- Community -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content has-text-justified">
+      <h2 class="title is-3 has-text-centered">Community</h2>
+      <p>
+        SH is part of the PlanX Universe, a collection of resources for engineering AI planning systems, and comes with a repository of domains and a suite of unit tests that allow researchers and practitioners to evaluate HTN planners and validate internal mechanisms. It plays an active role in teaching and research at the University of Stuttgart, where multiple students use SH in their projects and contribute to enriching its capabilities.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End community -->
+
+
+<!-- Relevant Literature -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content">
+      <h2 class="title is-3 has-text-centered">Relevant Literature:</h2>
+      <ol>
+        <li>Georgievski, I. Coordinating services embedded everywhere via hierarchical planning. Ph.D. Thesis, University of Groningen, October 2015.</li>
+        <li>Georgievski, I. and Aiello, M. HTN planning: Overview, comparison, and beyond. <em>Artificial Intelligence</em>, 222(0): 124-156. 2015.</li>
+        <li>Georgievski, I., Nguyen, T. A., Nizamic, F., Setz, B., Lazovik, A., and Aiello, M. Planning meets activity recognition: Service coordination for intelligent buildings. <em>Pervasive and Mobile Computing</em>, 38(1): 110-139. 2017.</li>
+        <li>Georgievski, I., Nizamic, F., Lazovik, A., and Aiello, M. Cloud Ready Applications Composed via HTN Planning. In <em>IEEE International Conference on Service Oriented Computing and Applications</em>, pages 23-33, 2017.</li>
+        <li>Georgievski, I. HTN Planning Domain for Deployment of Cloud Applications. In 10th International Planning Competition: Planner and Domain Abstracts, pages 34-46, 2021.</li>
+        <li>Georgievski, I.; and Breitenb&uuml;cher, U. A Vision for Composing, Integrating, and Deploying AI Planning Functionalities. In IEEE International Conference on Service-Oriented System Engineering, pages 166-171, 2021.</li>
+        <li>Georgievski, I. Towards Engineering AI Planning Functionalities as Services. In Service-Oriented Computing - ICSOC 2022 Workshops, of Lecture Notes in Computer Science, pages 225-236, 2022. Springer International Publishing.</li>
+        <li>Georgievski, I. Engineering AI Planning Systems. Habilitation Thesis, University of Stuttgart, June 2025.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+<!-- End relevant literature -->
+
+
+<!-- Irrelevant template-only media sections intentionally commented out. -->
+<!--
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div id="results-carousel" class="carousel results-carousel">...</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title">Poster</h2>
+        <iframe src="static/pdfs/sample.pdf" width="100%" height="550"></iframe>
+      </div>
+    </div>
+  </section>
+  -->
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{georgievski2024sh,
+    title={SH: Service-oriented HTN Planning system for real-world domains},
+    author={Georgievski, Ilche and Palghadmal, A. V. and Alnazer, E. and Aiello, Marco},
+    journal={SoftwareX},
+    volume={27},
+    pages={101779},
+    year={2024}
+  }</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+  </main>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
